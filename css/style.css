@@ -1,0 +1,354 @@
+/* ==========================================================================
+   [미션 1] 구글 폰트 불러오기 (세련되고 깔끔한 Noto Sans KR로 변경)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+
+/* 전체 페이지 글꼴 및 배경 기본 설정 */
+body {
+    font-family: 'Noto Sans KR', sans-serif; 
+    line-height: 1.6;                /* 폰트가 바뀌었으니 줄간격도 세련되게 조정 */
+    color: #1e293b;                  /* 너무 까맣지 않은 짙은 네이비/슬레이트 톤 */
+    /* 글래스모피즘의 핵심: 유리가 비칠 수 있도록 화사한 블루 그라데이션 배경 적용 */
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    background-attachment: fixed;    /* 스크롤해도 배경은 고정되게 설정 */
+    font-size: 16px;                 /* 폰트 크기를 표준화하여 세련미 강조 */
+}
+
+/* 메인 제목 스타일 (h1) */
+h1 {
+    color: #0f172a;                  
+    font-size: 42px;
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 20px;
+    letter-spacing: -1px;            /* 자간을 살짝 좁혀서 모던한 느낌 부여 */
+}
+
+/* 부제목 h2: 유리판 위에 얹어진 깔끔한 텍스트 */
+h2 {
+    color: #1d4ed8;                  /* 청량한 블루 포인트 */
+    font-size: 28px;
+    font-weight: 700;
+    padding: 10px 0;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(29, 78, 216, 0.3); /* 반투명한 밑줄 */
+}
+
+/* 소제목 h3 */
+h3 {
+    color: #3b82f6;
+    font-size: 22px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+/* 본문 텍스트 링크 스타일 */
+a {
+    color: #2563eb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #1e40af;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* ==========================================================================
+   글래스모피즘 공통 클래스 (유리 패널 효과)
+   ========================================================================== */
+/* 이 속성들을 카드, 사이드바, 폼 등에 공통으로 적용합니다 */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.4);      /* 반투명한 흰색 배경 */
+    backdrop-filter: blur(12px);               /* 배경을 흐리게 (블러 효과) */
+    -webkit-backdrop-filter: blur(12px);       /* 사파리 브라우저 지원 */
+    border: 1px solid rgba(255, 255, 255, 0.6); /* 빛을 받는 듯한 얇고 밝은 테두리 */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1); /* 은은하고 넓은 그림자 */
+    border-radius: 16px;
+}
+
+/* ==========================================================================
+   [미션 2] 실습과제 박스 모델의 이해
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* 유리 앨범 카드 (.trip-card) */
+.trip-card {
+    /* 공통 유리 효과 적용 (CSS 변수나 믹스인이 없으므로 코드를 직접 복사해 적용) */
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    padding: 25px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.trip-card img {
+    display: block;
+    margin-bottom: 20px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* 호버 시 떠오르는 유리 카드 */
+.trip-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.15); /* 블루 톤이 섞인 그림자 */
+    background: rgba(255, 255, 255, 0.6);            /* 호버 시 조금 더 불투명해지며 선명해짐 */
+}
+
+/* 시간표 테이블 정돈 */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+th {
+    background: rgba(255, 255, 255, 0.6);
+    color: #1e3a8a;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   [미션 3] 가독성 높은 회원가입 폼
+   ========================================================================== */
+fieldset {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+}
+
+legend {
+    font-weight: 700;
+    color: #1e40af;
+    padding: 5px 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+
+/* 세련된 폼 입력창 */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 14px 18px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.5); /* 반투명 입력창 */
+    font-family: inherit;
+    font-size: 1em;
+    color: #0f172a;
+    transition: all 0.3s ease;
+}
+
+/* 포커스 시 네온 블루 효과 */
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.8);
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* 글래스모피즘 버튼 스타일 */
+.btn-submit,
+.btn-reset {
+    padding: 14px 32px;
+    font-size: 1em;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    cursor: pointer;
+    margin-right: 15px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.btn-submit {
+    background: rgba(37, 99, 235, 0.8); /* 반투명한 메인 블루 */
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.btn-reset {
+    background: rgba(255, 255, 255, 0.5);
+    color: #475569;
+}
+
+.btn-submit:hover {
+    background: rgba(29, 78, 216, 1);
+    box-shadow: 0 6px 20px rgba(29, 78, 216, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-reset:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   [미션 4 & 5] Flex, Grid 및 미디어 쿼리
+   ========================================================================== */
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 15px;
+    gap: 10px;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;             /* 네비게이션 바를 둥근 캡슐 형태로 */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    margin-bottom: 40px;
+}
+
+nav a {
+    padding: 10px 24px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+nav a:hover {
+    background-color: #3b82f6;
+    color: #ffffff;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+.trip-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.content-wrapper {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+main {
+    flex: 7;
+}
+
+aside {
+    flex: 3;
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        border-radius: 16px;
+    }
+    .content-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+    main, aside {
+        width: 100%;
+    }
+    .trip-grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   [미션 6] 등장 애니메이션(Animations)
+   ========================================================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header h1 {
+    animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* ==========================================================================
+   [No 미션] 사이드바 자바스크립트 영역 버튼 꾸미기
+   ========================================================================== */
+aside section:last-child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+aside section:last-child button {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    font-size: 1em;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(135deg, #60a5fa, #3b82f6); /* 세련된 그라데이션 버튼 */
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    transition: all 0.3s ease;
+}
+
+aside section:last-child button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
