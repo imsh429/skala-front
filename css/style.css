@@ -85,7 +85,6 @@ a:hover {
 
 /* 유리 앨범 카드 (.trip-card) */
 .trip-card {
-    /* 공통 유리 효과 적용 (CSS 변수나 믹스인이 없으므로 코드를 직접 복사해 적용) */
     background: rgba(255, 255, 255, 0.45);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -247,7 +246,7 @@ nav ul {
 nav a {
     padding: 10px 24px;
     border-radius: 30px;
-    transition: all 0.3s ease;
+    transition: all 0.6s ease;
     background-color: transparent;
     font-weight: 700;
     color: #1e293b;
@@ -257,7 +256,7 @@ nav a:hover {
     background-color: #3b82f6;
     color: #ffffff;
     text-decoration: none;
-    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+    box-shadow: 0 4px 15px rgba(49, 108, 202, 0.4);
 }
 
 .trip-grid-container {
@@ -319,7 +318,7 @@ aside {
 }
 
 header h1 {
-    animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    animation: fadeInUp 2.0s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
 /* ==========================================================================
