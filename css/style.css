@@ -138,6 +138,9 @@ th {
 /* ==========================================================================
    [미션 3] 가독성 높은 회원가입 폼
    ========================================================================== */
+/* ==========================================================================
+   [미션 3] 가독성 높은 회원가입 폼 (보완 완료)
+   ========================================================================== */
 fieldset {
     background: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(12px);
@@ -158,32 +161,65 @@ legend {
     backdrop-filter: blur(5px);
 }
 
-/* 세련된 폼 입력창 */
+/* [보완] 라벨 스타일 추가: 입력창 위에서 깔끔하게 중심을 잡아줌 */
+fieldset p {
+    margin-bottom: 18px;
+}
+
+label {
+    font-weight: 700;
+    color: #334155;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+
+/* 세련된 폼 입력창 ([보완] input[type="tel"] 추가) */
 input[type="text"],
 input[type="password"],
 input[type="email"],
+input[type="tel"],
 input[type="date"],
 select,
 textarea {
     width: 100%;
     padding: 14px 18px;
-    margin-top: 8px;
-    margin-bottom: 20px;
+    margin-top: 6px;
     border: 1px solid rgba(255, 255, 255, 0.8);
     border-radius: 12px;
-    background: rgba(255, 255, 255, 0.5); /* 반투명 입력창 */
+    background: rgba(255, 255, 255, 0.5); 
     font-family: inherit;
     font-size: 1em;
     color: #0f172a;
     transition: all 0.3s ease;
 }
 
-/* 포커스 시 네온 블루 효과 */
-input:focus, textarea:focus, select:focus {
+/* [보완] 포커스 대상을 명확히 지정하여 라디오/체크박스 버그 방지 */
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
     outline: none;
     background: rgba(255, 255, 255, 0.8);
     border-color: #3b82f6;
     box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+}
+
+/* [보완] 파일 업로드 디자인 기본 정돈 */
+input[type="file"] {
+    margin-top: 6px;
+    font-family: inherit;
+    color: #475569;
+}
+
+/* [보완] 라디오, 체크박스 정렬 맞추기 (텍스트와 삐뚤어지는 현상 방지) */
+input[type="radio"],
+input[type="checkbox"] {
+    vertical-align: middle;
+    margin-right: 4px;
+    cursor: pointer;
 }
 
 textarea {
@@ -206,7 +242,7 @@ textarea {
 }
 
 .btn-submit {
-    background: rgba(37, 99, 235, 0.8); /* 반투명한 메인 블루 */
+    background: rgba(37, 99, 235, 0.8); 
     color: #ffffff;
     box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
 }

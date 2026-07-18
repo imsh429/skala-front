@@ -9,7 +9,8 @@
 
 <body>
     <div class="container">
-        <h1>SKALA에 회원가입하세요!</h1>
+        <h1>홈페이지에 회원가입하세요!</h1>
+        <p>회원가입을 위해 아래 정보를 입력하세요.</p>
 
         <form action="signUpResult.html" method="get">
             <fieldset>
@@ -22,7 +23,7 @@
 
                 <p>
                     <label for="userEmail">이메일: </label>
-                    <input type="text" id="userEmail" name="userEmail" placeholder="example">
+                    <input type="text" id="userEmail" name="userEmail" required placeholder="example">
                     @
                     <select name="emailDomain">
                         <option value="direct">직접 입력</option>
@@ -33,13 +34,18 @@
                 </p>
 
                 <p>
+                    <label for="userTel">전화번호</label>
+                    <input type="tel" id="userTel" name="userTel" required placeholder="010-1234-5678">
+                </p>
+
+                <p>
                     <label for="password">비밀번호:</label>
                     <input type="password" id="password" name="password" minlength="6" maxlength="20" required placeholder="6자 이상 20자 이하로 입력하세요">
                 </p>
             </fieldset>
 
             <fieldset>
-                <legend>프로필 설정</legend>
+                <legend>프로필 및 추가 설정</legend>
                 <p>
                     <label for="profilePicture">프로필 사진:</label>
                     <input type="file" id="profilePicture" name="profilePicture" accept="image/*">
@@ -53,11 +59,19 @@
                 </p>
 
                 <p>
-                    학력 : <br>
-                    <label><input type="checkbox" name="interest" value="highschool"> 고등학교</label><br>
-                    <label><input type="checkbox" name="interest" value="university"> 대학교</label><br>
-                    <label><input type="checkbox" name="interest" value="graduate"> 석사</label><br>
-                    <label><input type="checkbox" name="interest" value="phd"> 박사</label>
+                    최종 학력: <br>
+                    <label><input type="radio" name="education" value="highschool"> 고등학교</label><br>
+                    <label><input type="radio" name="education" value="university" checked> 대학교</label><br>
+                    <label><input type="radio" name="education" value="graduate"> 석사</label><br>
+                    <label><input type="radio" name="education" value="phd"> 박사</label>
+                </p>
+
+                <p>
+                    관심 분야 (중복 선택 가능): <br>
+                    <label><input type="checkbox" name="interest" value="frontend"> 프론트엔드</label><br>
+                    <label><input type="checkbox" name="interest" value="backend"> 백엔드</label><br>
+                    <label><input type="checkbox" name="interest" value="ai"> 인공지능(AI)</label><br>
+                    <label><input type="checkbox" name="interest" value="design"> UI/UX 디자인</label>
                 </p>
 
                 <p>
@@ -68,6 +82,13 @@
                 <p>
                     <label for="bio">자기소개:</label><br>
                     <textarea id="bio" name="bio" rows="4" cols="50" placeholder="자기소개를 입력하세요"></textarea>
+                </p>
+
+                <p>
+                    <label>
+                        <input type="checkbox" name="agree" value="yes" required> 
+                        (필수) 이용약관 및 개인정보 수집 이용에 동의합니다.
+                    </label>
                 </p>
             </fieldset>
 
