@@ -387,3 +387,32 @@ aside section:last-child button:hover {
     box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
     background: linear-gradient(135deg, #3b82f6, #2563eb);
 }
+
+/* ==========================================================================
+   회원가입 결과 페이지 전용 (심플 스타일)
+   ========================================================================== */
+.result-box {
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 16px;
+    padding: 30px;
+    margin-top: 25px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+}
+
+.result-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.result-list li {
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.result-list li:last-child {
+    border-bottom: none; /* 마지막 항목은 밑줄 제거 */
+}

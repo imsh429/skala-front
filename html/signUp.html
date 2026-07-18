@@ -59,11 +59,14 @@
                 </p>
 
                 <p>
-                    최종 학력: <br>
-                    <label><input type="radio" name="education" value="highschool"> 고등학교</label><br>
-                    <label><input type="radio" name="education" value="university" checked> 대학교</label><br>
-                    <label><input type="radio" name="education" value="graduate"> 석사</label><br>
-                    <label><input type="radio" name="education" value="phd"> 박사</label>
+                    <label for="education">최종 학력:</label>
+                    <select name="education" id="education" required>
+                        <option value="" disabled selected hidden>학력을 선택해 주세요</option>
+                        <option value="highschool">고등학교 졸업</option>
+                        <option value="university">대학교 졸업</option>
+                        <option value="graduate">석사 졸업</option>
+                        <option value="phd">박사 졸업</option>
+                    </select>
                 </p>
 
                 <p>
