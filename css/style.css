@@ -1,18 +1,17 @@
 /* ==========================================================================
-   [미션 1] 구글 폰트 불러오기 (세련되고 깔끔한 Noto Sans KR로 변경)
+   [미션 1] 구글 폰트 불러오기 
    ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 
 /* 전체 페이지 글꼴 및 배경 기본 설정 */
 body {
     font-family: 'Noto Sans KR', sans-serif; 
-    line-height: 1.6;                /* 폰트가 바뀌었으니 줄간격도 세련되게 조정 */
-    color: #1e293b;                  /* 너무 까맣지 않은 짙은 네이비/슬레이트 톤 */
+    line-height: 1.6;               
+    color: #1e293b;                  
     scroll-behavior: smooth;
-    /* 글래스모피즘의 핵심: 유리가 비칠 수 있도록 화사한 블루 그라데이션 배경 적용 */
     background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
-    background-attachment: fixed;    /* 스크롤해도 배경은 고정되게 설정 */
-    font-size: 16px;                 /* 폰트 크기를 표준화하여 세련미 강조 */
+    background-attachment: fixed;    
+    font-size: 16px;                 
 }
 
 /* 메인 제목 스타일 (h1) */
@@ -22,12 +21,12 @@ h1 {
     font-weight: 700;
     text-align: center;
     padding-bottom: 20px;
-    letter-spacing: -1px;            /* 자간을 살짝 좁혀서 모던한 느낌 부여 */
+    letter-spacing: -1px;           
 }
 
-/* 부제목 h2: 유리판 위에 얹어진 깔끔한 텍스트 */
+/* 부제목 (h2) */
 h2 {
-    color: #1d4ed8;                  /* 청량한 블루 포인트 */
+    color: #1d4ed8;                  
     font-size: 28px;
     font-weight: 700;
     padding: 10px 0;
@@ -62,11 +61,11 @@ a:hover {
    glass morphism 공통 클래스 
    ========================================================================== */
 .glass-panel {
-    background: rgba(255, 255, 255, 0.4);      /* 반투명한 흰색 배경 */
-    backdrop-filter: blur(12px);               /* 배경을 흐리게 (블러 효과) */
-    -webkit-backdrop-filter: blur(12px);       /* 사파리 브라우저 지원 */
-    border: 1px solid rgba(255, 255, 255, 0.6); /* 빛을 받는 듯한 얇고 밝은 테두리 */
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1); /* 은은하고 넓은 그림자 */
+    background: rgba(255, 255, 255, 0.4);      
+    backdrop-filter: blur(12px);              
+    -webkit-backdrop-filter: blur(12px);      
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1); 
     border-radius: 16px;
 }
 
@@ -87,7 +86,7 @@ a:hover {
     text-align: center;
 }
 
-/* 평점 안내 문구를 깔끔한 캡슐 뱃지 형태로 변경 */
+/* 평점 섹션 */
 .rating-info {
     display: inline-block;
     background: rgba(255, 255, 255, 0.5);
