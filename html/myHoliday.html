@@ -8,30 +8,95 @@
 </head>
 <body>
     <div class="container">
-    
-    <h1>🩷<strong>나의 휴일 일과</strong>🩷</h1>
-    <br>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">🏠 메인으로</a></li>
+                <li><a href="#holiday-routine">🛋️ 휴일 일과</a></li>
+                <li><a href="#content-recommend">🍿 컨텐츠 추천</a></li>
+            </ul>
+        </nav>
+        
+        <header>
+            <h1>🩷 <strong>나의 휴일 일과</strong> 🩷</h1>
+            <p>바쁜 평일을 보내고 맞는 <mark>평화로운 주말</mark>!<br>저의 힐링 루틴과 최애 컨텐츠를 소개합니다. ✨</p>
+        </header>
 
-    <h2>🥱 <mark>에너지 충전</mark></h2>
-    <p><em>첫 번째</em> : 🛌 <b>늦게</b> 일어나기</p>
-    <p><em>두 번째</em> : 🛋️ 집에서 편하게 <b>누워있기</b></p>
-    <hr>
+        <main>
+            <section id="holiday-routine">
+                <h2>🥱 에너지 충전</h2>
+                <p><em>첫 번째</em> : 🛌 <b>늦게</b> 일어나기</p>
+                <p><em>두 번째</em> : 🛋️ 집에서 편하게 <b>누워있기</b></p>
+                
+                <hr>
 
-    <h2>🎬 <mark>여가생활 즐기기</mark></h2>
-    <p><em>첫 번째</em> : 🍿 <b>좋아하는</b> 영화나 드라마 보기</p>
-    <p><em>두 번째</em> : 🍕 <b>맛있는</b> 음식 먹기</p>
-    <p><em>세 번째</em> : 🗣️ 친구와 만나서 <b>이야기</b>하기</p>
-    <hr>
+                <h2>🎬 여가생활 즐기기</h2>
+                <p><em>첫 번째</em> : 🍿 <b>좋아하는</b> 영화나 드라마 보기</p>
+                <p><em>두 번째</em> : 🍕 <b>맛있는</b> 음식 먹기</p>
+                <p><em>세 번째</em> : 🗣️ 친구와 만나서 <b>이야기</b>하기</p>
+                
+                <hr>
 
-    <h2>✍️ <mark>공부는 꾸준히!</mark></h2>
-    <p><em>첫 번째</em> : 📖 그동안 배웠던 내용 <b>복습</b>하기</p>
-    <p><em>두 번째</em> : 🧠 휴가 후 있을 수업에 대비해 <b>가볍게 예습</b>하기</p>
+                <h2>✍️ 공부는 꾸준히!</h2>
+                <p><em>첫 번째</em> : 📖 그동안 배웠던 내용 <b>복습</b>하기</p>
+                <p><em>두 번째</em> : 🧠 휴가 후 있을 수업에 대비해 <b>가볍게 예습</b>하기</p>
+            </section>
 
-    <hr>
+            <hr>
+            
+            <section id="content-recommend">
+                <h2>🍿 최근에 봤던 재밌는 컨텐츠 추천</h2>
+                <p><small>포스터를 눌러 영상을 확인하세요.</small></p>
+                
+                <div class="slider-container">
+                    
+                    <button class="slider-arrow-btn prev-btn">◀</button>
 
-    <h2>🍿 <mark>최근에 봤던 재밌는 콘텐츠 추천</mark></h2>
-    <p>🎬 <b>귀멸의 칼날:무한성 편</b> : <a href="https://www.youtube.com/watch?v=a_T1o4FWAYo" target="_blank">예고편 보러가기 🍿</a></p>
-    <p>🍿 <b>진격의 거인</b> : <a href="https://www.youtube.com/watch?v=Qn6CF9zl6m8" target="_blank">요약본 보러가기 🎬</a></p>
+                    <div class="slider-view-window">
+                        <div class="slider-track">
+                            
+                            <div class="poster-card news-card">
+                                <div class="poster-thumb">
+                                    <img src="../media/귀칼.jpg" alt="귀멸의 칼날 포스터">
+                                    <div class="poster-overlay">
+                                        <a href="https://www.youtube.com/watch?v=a_T1o4FWAYo" target="_blank" class="poster-btn">예고편 보기 🎬</a>
+                                    </div>
+                                </div>
+                                <div class="poster-info">
+                                    <h3>귀멸의 칼날: 무한성 편</h3>
+                                    <p>화려한 액션신을 보고싶다면 추천!<br>극장에서 꼭 봐야 하는 인생작</p>
+                                </div>
+                            </div>
+
+                            <div class="poster-card news-card">
+                                <div class="poster-thumb">
+                                    <img src="../media/진격거.jpg" alt="진격의 거인 포스터">
+                                    <div class="poster-overlay">
+                                        <a href="https://www.youtube.com/watch?v=Qn6CF9zl6m8" target="_blank" class="poster-btn">요약본 보기 🍿</a>
+                                    </div>
+                                </div>
+                                <div class="poster-info">
+                                    <h3>진격의 거인</h3>
+                                    <p>이것은 그냥 애니메이션이 아닙니다.<br>진격의 거인은 역사입니다. 꼭 보시길..</p>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <button class="slider-arrow-btn next-btn">▶</button>
+                    
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <hr>
+            <p><small>© 2026 신서현 | All rights reserved.</small></p>
+        </footer>
+        
     </div>
+    
+    <script src="../script/slider.js"></script>
 </body>
 </html>

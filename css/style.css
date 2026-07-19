@@ -4,11 +4,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
 
 /* 전체 페이지 글꼴 및 배경 기본 설정 */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Noto Sans KR', sans-serif; 
     line-height: 1.6;               
     color: #1e293b;                  
-    scroll-behavior: smooth;
     background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
     background-attachment: fixed;    
     font-size: 16px;                 
@@ -404,129 +407,6 @@ aside {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
 }
 
-/* ==========================================================================
-   [미션 4 & 5] Flex, Grid 및 미디어 쿼리 (모바일 반응형 완벽 보완)
-   ========================================================================== */
-@media (max-width: 768px) {
-    .container {
-        padding: 20px 15px;
-    }
-
-    h1 {
-        font-size: 28px;      
-        padding-bottom: 10px;
-    }
-    
-    h2 {
-        font-size: 20px;      
-        margin-top: 25px;
-        margin-bottom: 15px;
-    }
-    
-    h3 {
-        font-size: 18px;      
-        margin-top: 15px;
-    }
-
-    nav ul {
-        flex-direction: column;
-        border-radius: 16px;
-        padding: 10px;
-    }
-    
-    nav a {
-        display: block;
-        text-align: center;
-        padding: 8px 0;
-    }
-
-    .content-wrapper {
-        flex-direction: column;
-        gap: 25px;
-    }
-    
-    main, aside {
-        width: 100%;
-    }
-
-    .trip-grid-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .slider-view-window {
-        max-width: 100%;      
-    }
-    
-    .news-card {
-        padding: 18px;         
-    }
-
-    /* 시간표 반응형 적용 */
-    th, td {
-        padding: 8px 4px ; 
-        font-size: 12px ;   
-    }
-
-    td b {
-        font-size: 12px ;
-        line-height: 1.3;
-    }
-
-    details {
-        padding: 4px 6px ;
-        margin-top: 4px ;
-        font-size: 11px ;
-    }
-
-    td[colspan="5"] a {
-        font-size: 12px ;
-    }
-
-    table {
-        min-width: 100% ; 
-    }
-
-    /* 날씨 반응형 적용 */
-    #city-select {
-        padding: 12px 16px;   
-        font-size: 0.95rem;
-    }
-
-    #weather-box {
-        padding: 12px;        
-        margin-top: 12px;
-    }
-
-    #weather-box h4 {
-        font-size: 0.95rem;   
-        margin-bottom: 8px;
-    }
-
-    #weather-box p {
-        font-size: 0.85rem;   
-        margin: 6px 0;
-    }
-
-    #weather-box p b {
-        font-size: 0.85rem;    
-        padding: 1px 6px;
-    }
-}
-
-/* ==========================================================================
-   [미션 6] 등장 애니메이션(Animations)
-   ========================================================================== */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 header h1 {
     animation: fadeInUp 2.0s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
@@ -851,4 +731,250 @@ aside section:last-child button:hover {
     padding: 2px 8px;
     border-radius: 6px;
     font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   my holiday의 포스터 카드 섹션
+   ========================================================================== */
+
+.poster-card {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    overflow: hidden; 
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; 
+}
+
+.poster-card:hover {
+    transform: translateY(-6px); 
+    box-shadow: 0 12px 30px rgba(37, 99, 235, 0.15);
+}
+
+.poster-thumb {
+    position: relative;
+    width: 100%;
+    height: 340px;
+    overflow: hidden;
+}
+
+.poster-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transition: transform 0.5s ease;
+}
+
+.poster-card:hover .poster-thumb img {
+    transform: scale(1.04); 
+}
+
+.poster-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.7); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; 
+    backdrop-filter: blur(4px); 
+    transition: opacity 0.3s ease;
+}
+
+.poster-card:hover .poster-overlay {
+    opacity: 1; 
+}
+
+.poster-btn {
+    background: #ffffff;
+    color: #0f172a !important; 
+    padding: 12px 26px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    transform: translateY(15px); 
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.poster-card:hover .poster-btn {
+    transform: translateY(0); 
+}
+
+.poster-btn:hover {
+    background: #2563eb;
+    color: #ffffff !important;
+}
+
+.poster-info {
+    padding: 22px;
+    background: rgba(255, 255, 255, 0.15); 
+}
+
+.poster-info h3 {
+    margin: 0 0 8px 0 ;
+    font-size: 1.2rem ;
+    color: #0f172a;
+    letter-spacing: -0.5px;
+}
+
+.poster-info p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: #475569;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   [미션 4 & 5] Flex, Grid 및 미디어 쿼리 (모바일 반응형 완벽 보완)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 15px;
+    }
+
+    h1 {
+        font-size: 28px;      
+        padding-bottom: 10px;
+    }
+    
+    h2 {
+        font-size: 20px;      
+        margin-top: 25px;
+        margin-bottom: 15px;
+    }
+    
+    h3 {
+        font-size: 18px;      
+        margin-top: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        border-radius: 16px;
+        padding: 10px;
+    }
+    
+    nav a {
+        display: block;
+        text-align: center;
+        padding: 8px 0;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+        gap: 25px;
+    }
+    
+    main, aside {
+        width: 100%;
+    }
+
+    .trip-grid-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .slider-view-window {
+        max-width: 100%;      
+    }
+    
+    .news-card {
+        padding: 18px;         
+    }
+
+    /* 시간표 반응형 적용 */
+    th, td {
+        padding: 8px 4px ; 
+        font-size: 12px ;   
+    }
+
+    td b {
+        font-size: 12px ;
+        line-height: 1.3;
+    }
+
+    details {
+        padding: 4px 6px ;
+        margin-top: 4px ;
+        font-size: 11px ;
+    }
+
+    td[colspan="5"] a {
+        font-size: 12px ;
+    }
+
+    table {
+        min-width: 100% ; 
+    }
+
+    /* 날씨 반응형 적용 */
+    #city-select {
+        padding: 12px 16px;   
+        font-size: 0.95rem;
+    }
+
+    #weather-box {
+        padding: 12px;        
+        margin-top: 12px;
+    }
+
+    #weather-box h4 {
+        font-size: 0.95rem;   
+        margin-bottom: 8px;
+    }
+
+    #weather-box p {
+        font-size: 0.85rem;   
+        margin: 6px 0;
+    }
+
+    #weather-box p b {
+        font-size: 0.85rem;    
+        padding: 1px 6px;
+    }
+
+    .poster-thumb {
+        height: 260px; 
+    }
+
+    .poster-info {
+        padding: 16px;
+    }
+
+    .poster-info h3 {
+        font-size: 1.05rem; 
+        margin-bottom: 6px;
+    }
+
+    .poster-info p {
+        font-size: 0.85rem; 
+        line-height: 1.5;
+    }
+
+    .poster-btn {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+    }
+}
+
+/* ==========================================================================
+   [미션 6] 등장 애니메이션(Animations)
+   ========================================================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
