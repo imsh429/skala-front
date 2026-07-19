@@ -6,99 +6,119 @@
     <title>회원가입</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
-
 <body>
     <div class="container">
-        <h1>홈페이지에 회원가입하세요!</h1>
-        <p>회원가입을 위해 아래 정보를 입력하세요.</p>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">🏠 메인으로</a></li>
+            </ul>
+        </nav>
+        
+        <header>
+            <h1>홈페이지에 회원가입하세요!</h1>
+            <p>회원가입을 위해 아래 정보를 입력하세요.</p>
+        </header>
 
-        <form action="signUpResult.html" method="get">
-            <fieldset>
-                <legend>사용자 개인 정보</legend>
+        <main>
+            <form action="signUpResult.html" method="get">
+                
+                <fieldset>
+                    <legend>사용자 개인 정보</legend>
 
-                <p>
-                    <label for="username">사용자 이름:</label>
-                    <input type="text" id="username" name="username" minlength= "1" maxlength="20" required placeholder="한 글자 이상 입력하세요">
-                </p>
+                    <p>
+                        <label for="username">사용자 이름:</label>
+                        <input type="text" id="username" name="username" minlength="1" maxlength="20" required placeholder="한 글자 이상 입력하세요">
+                    </p>
 
-                <p>
-                    <label for="userEmail">이메일: </label>
-                    <input type="text" id="userEmail" name="userEmail" required placeholder="example">
-                    @
-                    <select name="emailDomain">
-                        <option value="direct">직접 입력</option>
-                        <option value="naver.com">naver.com</option>
-                        <option value="gmail.com">gmail.com</option>
-                        <option value="daum.net">daum.net</option>
-                    </select>
-                </p>
+                    <p>
+                        <label for="userEmail">이메일:</label>
+                        <input type="text" id="userEmail" name="userEmail" required placeholder="example">
+                        @
+                        <select name="emailDomain">
+                            <option value="direct">직접 입력</option>
+                            <option value="naver.com">naver.com</option>
+                            <option value="gmail.com">gmail.com</option>
+                            <option value="daum.net">daum.net</option>
+                        </select>
+                    </p>
 
-                <p>
-                    <label for="userTel">전화번호</label>
-                    <input type="tel" id="userTel" name="userTel" required placeholder="010-1234-5678">
-                </p>
+                    <p>
+                        <label for="userTel">전화번호</label>
+                        <input type="tel" id="userTel" name="userTel" required placeholder="010-1234-5678">
+                    </p>
 
-                <p>
-                    <label for="password">비밀번호:</label>
-                    <input type="password" id="password" name="password" minlength="6" maxlength="20" required placeholder="6자 이상 20자 이하로 입력하세요">
-                </p>
-            </fieldset>
+                    <p>
+                        <label for="password">비밀번호:</label>
+                        <input type="password" id="password" name="password" minlength="6" maxlength="20" required placeholder="6자 이상 20자 이하로 입력하세요">
+                    </p>
+                </fieldset>
 
-            <fieldset>
-                <legend>프로필 및 추가 설정</legend>
-                <p>
-                    <label for="profilePicture">프로필 사진:</label>
-                    <input type="file" id="profilePicture" name="profilePicture" accept="image/*">
-                </p>
+                <fieldset>
+                    <legend>프로필 및 추가 설정</legend>
+                    
+                    <p>
+                        <label for="profilePicture">프로필 사진:</label>
+                        <input type="file" id="profilePicture" name="profilePicture" accept="image/*">
+                    </p>
 
-                <p>
-                    성별: 
-                    <label><input type="radio" name="gender" value="male" checked> 남성</label>
-                    <label><input type="radio" name="gender" value="female"> 여성</label>
-                    <label><input type="radio" name="gender" value="none"> 선택안함</label>
-                </p>
+                    <p>
+                        성별: 
+                        <label><input type="radio" name="gender" value="male" checked> 남성</label>
+                        <label><input type="radio" name="gender" value="female"> 여성</label>
+                        <label><input type="radio" name="gender" value="none"> 선택안함</label>
+                    </p>
 
-                <p>
-                    <label for="education">최종 학력:</label>
-                    <select name="education" id="education" required>
-                        <option value="" disabled selected hidden>학력을 선택해 주세요</option>
-                        <option value="highschool">고등학교 졸업</option>
-                        <option value="university">대학교 졸업</option>
-                        <option value="graduate">석사 졸업</option>
-                        <option value="phd">박사 졸업</option>
-                    </select>
-                </p>
+                    <p>
+                        <label for="education">최종 학력:</label>
+                        <select name="education" id="education" required>
+                            <option value="" disabled selected hidden>학력을 선택해 주세요</option>
+                            <option value="highschool">고등학교 졸업</option>
+                            <option value="university">대학교 졸업</option>
+                            <option value="graduate">석사 졸업</option>
+                            <option value="phd">박사 졸업</option>
+                        </select>
+                    </p>
 
-                <p>
-                    관심 분야 (중복 선택 가능): <br>
-                    <label><input type="checkbox" name="interest" value="frontend"> 프론트엔드</label><br>
-                    <label><input type="checkbox" name="interest" value="backend"> 백엔드</label><br>
-                    <label><input type="checkbox" name="interest" value="ai"> 인공지능(AI)</label><br>
-                    <label><input type="checkbox" name="interest" value="design"> UI/UX 디자인</label>
-                </p>
+                    <p>
+                        관심 분야 (중복 선택 가능): <br>
+                        <label><input type="checkbox" name="interest" value="frontend"> 프론트엔드</label><br>
+                        <label><input type="checkbox" name="interest" value="backend"> 백엔드</label><br>
+                        <label><input type="checkbox" name="interest" value="ai"> 인공지능(AI)</label><br>
+                        <label><input type="checkbox" name="interest" value="design"> UI/UX 디자인</label>
+                    </p>
 
-                <p>
-                    <label for="birthdate">생년월일:</label>
-                    <input type="date" id="birthdate" name="birthdate" required>
-                </p>
+                    <p>
+                        <label for="birthdate">생년월일:</label>
+                        <input type="date" id="birthdate" name="birthdate" required>
+                    </p>
 
-                <p>
-                    <label for="bio">자기소개:</label><br>
-                    <textarea id="bio" name="bio" rows="4" cols="50" placeholder="자기소개를 입력하세요"></textarea>
-                </p>
+                    <p>
+                        <label for="bio">자기소개:</label><br>
+                        <textarea id="bio" name="bio" rows="4" cols="50" placeholder="자기소개를 입력하세요"></textarea>
+                    </p>
 
-                <p>
-                    <label>
-                        <input type="checkbox" name="agree" value="yes" required> 
-                        (필수) 이용약관 및 개인정보 수집 이용에 동의합니다.
-                    </label>
-                </p>
-            </fieldset>
+                    <p>
+                        <label>
+                            <input type="checkbox" name="agree" value="yes" required> 
+                            (필수) 이용약관 및 개인정보 수집 이용에 동의합니다.
+                        </label>
+                    </p>
+                </fieldset>
 
-            <input type="submit" class="btn-submit" value="동의하고 회원가입">
-            <input type="reset" class="btn-reset" value="다시 작성">
+                <div class="form-buttons">
+                    <input type="submit" class="btn-submit" value="동의하고 회원가입">
+                    <input type="reset" class="btn-reset" value="다시 작성">
+                </div>
 
-        </form>
+            </form>
+        </main>
+
+        <footer>
+            <hr>
+            <p><small>© 2026 신서현 | All rights reserved.</small></p>
+        </footer>
+        
     </div>
 </body>
 </html>
